@@ -1,20 +1,15 @@
 server:
-  port: 3344
+  port: 3355
 
 spring:
   application:
     name: cloud0config-center
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/13327955131/springcloud.git   #github 远程项目地址
-          search-paths:
-            - springcloud                 #github 项目名
-          force-pull: true
-          username: 281008187@qq.com      #github 账号
-          password: Aq521295475295        #github 密码
-      label: master
+      label: master #分支名称
+      name: config  #配置文件名称
+      profile: dev    #读取后缀名称 上述3个综合 ： master分支上config-dev。yml  的配置文件被读取 http://config-3344.com:3344/master/config-dev.yml
+      uri: http://localhoust:3344
 
 
 
